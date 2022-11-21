@@ -19,8 +19,13 @@ public class player_controller : MonoBehaviour
     Collider2D cllidr;
     gamemanager gamemanager;
     heal_controller healthcont;
-    
-    
+
+    public float recoil, recoilTime;
+    float recoilcounter;
+    bool directoryrihgt;
+
+
+
 
     private void Awake()
     {
@@ -35,11 +40,37 @@ public class player_controller : MonoBehaviour
     }
     private void Update()
     {
-        movementFNC();
-        jumpFNC();
-        change_directoryFNC();
+        if (recoilcounter <= 0)
+        {
+            if (healthcont.deathquestion == false)
+            {
+                movementFNC();
+                jumpFNC();
+                change_directoryFNC();
+            }
+            else
+            {
+                deathFNC();
+            }
+            
+        }
+        else
+        {
+            recoilcounter -= Time.deltaTime;
+            if (directoryrihgt)
+            {
+                rb.velocity = new Vector2(-recoil, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(recoil, rb.velocity.y);
+            }
+          
+        }
+        anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("onthefloor", touch_floor);
         deathFNC();
-        
+
     }
     void movementFNC()
     {
@@ -70,11 +101,13 @@ public class player_controller : MonoBehaviour
         if(rb.velocity.x > 0)
         {
             jokerScale.x = 4.147688f;
+            directoryrihgt = true;
         }
         
         else if(rb.velocity.x < 0)
         {
             jokerScale.x = -4.147688f;
+            directoryrihgt = false;
         }
         transform.localScale = jokerScale;
     }
@@ -101,5 +134,11 @@ public class player_controller : MonoBehaviour
         
 
 
+    }
+
+    public void recoilFNC()
+    {
+        recoilcounter = recoilTime;
+        rb.velocity = new Vector2(0, rb.velocity.y);
     }
 }
