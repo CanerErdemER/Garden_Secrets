@@ -9,10 +9,12 @@ public class heal_controller : MonoBehaviour
    
     Rigidbody2D rb;
     public bool deathquestion=false;
+
+    UI_controller ui_Controller;
     
     private void Awake()
     {
-      
+        ui_Controller = Object.FindObjectOfType<UI_controller>();  
         
 
     }
@@ -24,8 +26,9 @@ public class heal_controller : MonoBehaviour
     
     public void TakeDamage()
     {
-        health = health - 5;
-        
+        health = health - 1;
+
+        ui_Controller.healtUIhupdateFNC();
     }
 
    

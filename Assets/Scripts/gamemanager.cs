@@ -12,17 +12,12 @@ public class gamemanager : MonoBehaviour
 
     private void Start()
     {
-        star_score_text.text = "Star Points: 0 "+star_score.ToString();
+       
         
     }
 
     public void updatestar(float star_Score)
     {
-        star_score += star_Score;
-
-        star_score_text.text = "Star Points: " + star_score.ToString();
-        
-
         
     }
 }
