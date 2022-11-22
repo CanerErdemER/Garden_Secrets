@@ -6,18 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class gamemanager : MonoBehaviour
 {
-    public float star_score = 0;
-
-    public Text star_score_text;
-
-    private void Start()
-    {
-       
-        
-    }
-
-    public void updatestar(float star_Score)
+    collectibles_controller cc;
+    private void Awake()
     {
         
     }
+    public int collectedstarcount;
+
+   
 }

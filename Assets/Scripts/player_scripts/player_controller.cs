@@ -111,16 +111,7 @@ public class player_controller : MonoBehaviour
         }
         transform.localScale = jokerScale;
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "star")
-        {
-            gamemanager.updatestar(1);
-            Destroy(other.gameObject);
-        }
-
     
-    }
     void deathFNC()
     {
         
@@ -140,5 +131,7 @@ public class player_controller : MonoBehaviour
     {
         recoilcounter = recoilTime;
         rb.velocity = new Vector2(0, rb.velocity.y);
+        if (healthcont.health >= 1) 
+        anim.SetTrigger("damage");
     }
 }
