@@ -10,10 +10,18 @@ public class UI_controller : MonoBehaviour
     [SerializeField]
     Sprite maxheart, halfheart, emtheart;
     heal_controller heal_Controller;
-    private void Awake()
+
+    [SerializeField]
+    Image starpowerbar_img;
+    [SerializeField]
+    Sprite star0, star1, star2, star3, star4, star5;
+    collectibles_controller cc;
+    gamemanager gm;
+    public void Awake()
     {
         heal_Controller = Object.FindObjectOfType<heal_controller>();
-
+        cc = Object.FindObjectOfType<collectibles_controller>();
+        gm= Object.FindObjectOfType<gamemanager>();
     }
     public void healtUIhupdateFNC()
     {
@@ -55,6 +63,33 @@ public class UI_controller : MonoBehaviour
                 heart3_img.sprite = emtheart;
                 break;
 
+
+
+        }
+    }
+
+    public void starpowerUpdateFNC()
+    {
+        switch (gm.collectedstarcount)
+        {
+            case 0:
+                starpowerbar_img.sprite = star0;
+                break;
+            case 1:
+                starpowerbar_img.sprite = star1;
+                break;
+            case 2:
+                starpowerbar_img.sprite = star2;
+                break;
+            case 3:
+                starpowerbar_img.sprite = star3;
+                break;
+            case 4:
+                starpowerbar_img.sprite = star4;
+                break;
+            case 5:
+                starpowerbar_img.sprite = star5;
+                break;
 
 
         }
