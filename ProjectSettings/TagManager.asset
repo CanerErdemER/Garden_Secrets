@@ -49,7 +49,7 @@ TagManager:
   - name: bg2
     uniqueID: 2475587173
     locked: 0
-  - name: player
+  - name: player_and_enemys
     uniqueID: 3546026853
     locked: 0
   - name: environmental elements
