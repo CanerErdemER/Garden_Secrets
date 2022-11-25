@@ -6,6 +6,7 @@ TagManager:
   tags:
   - star
   - starscoretag
+  - mushow
   layers:
   - Default
   - TransparentFX

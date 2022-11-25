@@ -10,6 +10,7 @@ public class Mushow_scripts : MonoBehaviour
     Rigidbody2D rb;
     public SpriteRenderer sr;
 
+    Animator anim;
     public float movementtime, waitingtime;
     float Movementcounter, waitingcounter;
 
@@ -17,7 +18,8 @@ public class Mushow_scripts : MonoBehaviour
 
     private void Awake()
     {
-        rb= GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -60,6 +62,7 @@ public class Mushow_scripts : MonoBehaviour
             {
                 waitingcounter = Random.Range( 2, 4);
             }
+            anim.SetBool("movement_speed",true);
            
         } 
         else if (waitingcounter >= 0)
@@ -70,7 +73,9 @@ public class Mushow_scripts : MonoBehaviour
                 {
                     Movementcounter=Random.Range(5,10);
                 }
-            }
+            anim.SetBool("movement_speed", false);
+        }
+       
     }
     
 
