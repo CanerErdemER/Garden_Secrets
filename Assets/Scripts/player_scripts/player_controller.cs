@@ -24,6 +24,8 @@ public class player_controller : MonoBehaviour
     float recoilcounter;
     bool directoryrihgt;
 
+    public float enemytouchjumppower;
+
 
 
 
@@ -124,6 +126,11 @@ public class player_controller : MonoBehaviour
         }
         
 
+
+    }
+    public void enemytouchjump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x,enemytouchjumppower);    
 
     }
 
