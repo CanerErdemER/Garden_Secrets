@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mushow_scripts : MonoBehaviour
+public class Mushow_controller : MonoBehaviour
 {
     public float movement_speed;
     public Transform leftTarget, rightTarget;
     bool isdirectionright;
     Rigidbody2D rb;
     public SpriteRenderer sr;
+    
 
     Animator anim;
     public float movementtime, waitingtime;
