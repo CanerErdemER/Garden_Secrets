@@ -1,5 +1,5 @@
-mushow yürüme efekti
+
 mushow hasar alması playere tanımlı
-mushow up boundry damage alması
+
 mushow hurting and deathing effect&animations
 
