@@ -91,6 +91,7 @@ public class player_controller : MonoBehaviour
             if (touch_floor)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jump_power);
+                sound_controller.instance.playvoiceeffects(0);
             }
         }
         anim.SetFloat("speed",Mathf.Abs(rb.velocity.x));
