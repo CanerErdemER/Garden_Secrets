@@ -10,6 +10,7 @@ public class Pholox_pepper_controller : MonoBehaviour
     Rigidbody2D rb;
     public SpriteRenderer sr;
 
+
     Animator anim;
     public float movementtime, waitingtime;
     float Movementcounter, waitingcounter;
@@ -71,6 +72,8 @@ public class Pholox_pepper_controller : MonoBehaviour
             }
             anim.SetBool("movement_speed", false);
         }
+        
 
     }
+
 }
