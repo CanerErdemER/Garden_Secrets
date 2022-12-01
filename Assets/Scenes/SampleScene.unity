@@ -3397,7 +3397,7 @@ MonoBehaviour:
   lefttarget: {fileID: 1490390329}
   righttarget: {fileID: 1682085815}
   sr: {fileID: 944407379}
-  FireBall: {fileID: 0}
+  FireBall: {fileID: 4894170224540759531, guid: 8041070873a5cd84dbf94396e0713427, type: 3}
   FireBallCenter: {fileID: 1231235237}
   FireBallThrowTime: 1.5
   TakeDamageTime: 1
@@ -12515,11 +12515,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4516673744818864134, guid: f5f4f4000b63c4648a3ff91067a8478b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.4
+      value: 24.25
       objectReference: {fileID: 0}
     - target: {fileID: 4516673744818864134, guid: f5f4f4000b63c4648a3ff91067a8478b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.11
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4516673744818864134, guid: f5f4f4000b63c4648a3ff91067a8478b, type: 3}
       propertyPath: m_LocalPosition.z

@@ -50,6 +50,8 @@ public class RedBossController : MonoBehaviour
         switch (CurrentSituation)
         {
             case RedBossSituation.Hit:
+                FireBall = Instantiate(FireBall, transform.position, transform.rotation);
+                CurrentSituation= RedBossSituation.Move;
                 break;
             case RedBossSituation.TakeDamage:
                 if (TakeDamageCounter > 0)
