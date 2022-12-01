@@ -73,7 +73,7 @@ public class Pholox_pepper_controller : MonoBehaviour
             anim.SetBool("movement_speed", false);
         }
         
-
+        
     }
 
 }
