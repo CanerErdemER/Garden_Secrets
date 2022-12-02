@@ -50,7 +50,7 @@ public class RedBossController : MonoBehaviour
         switch (CurrentSituation)
         {
             case RedBossSituation.Hit:
-                FireBall = Instantiate(FireBall, transform.position, transform.rotation);
+      
                 CurrentSituation= RedBossSituation.Move;
                 break;
             case RedBossSituation.TakeDamage:
@@ -75,7 +75,7 @@ public class RedBossController : MonoBehaviour
                         isdirectionright = false;
                         CurrentSituation= RedBossSituation.Hit;
                         FireBallThrowCounter = FireBallThrowTime;
-
+                        anim.SetTrigger("movement_speed");
                     }
                  
                 }
@@ -88,7 +88,7 @@ public class RedBossController : MonoBehaviour
                         isdirectionright = true;
                         CurrentSituation = RedBossSituation.Hit;
                         FireBallThrowCounter = FireBallThrowTime;
-
+                        anim.SetTrigger("movement_speed");
                     }
 
 
@@ -109,6 +109,7 @@ public class RedBossController : MonoBehaviour
         CurrentSituation = RedBossSituation.TakeDamage;
         TakeDamageCounter = TakeDamageTime;
 
+        anim.SetTrigger("Hit");
         
     }
 }
