@@ -50,6 +50,14 @@ public class RedBossController : MonoBehaviour
         switch (CurrentSituation)
         {
             case RedBossSituation.Hit:
+                //ateþ edildiðinde
+                FireBallThrowCounter -= Time.deltaTime;
+                if (FireBallThrowCounter <= 0)
+                {
+                    FireBallThrowCounter = FireBallThrowTime;
+                    var NewFireBall=Instantiate(FireBall,FireBallCenter.position,FireBallCenter.rotation);
+                    NewFireBall.transform.localScale = RedBoss.localScale;
+                }
       
                 CurrentSituation= RedBossSituation.Move;
                 break;
