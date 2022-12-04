@@ -3399,10 +3399,10 @@ MonoBehaviour:
   sr: {fileID: 944407379}
   FireBall: {fileID: 4894170224540759531, guid: 8041070873a5cd84dbf94396e0713427, type: 3}
   FireBallCenter: {fileID: 1231235237}
-  FireBallThrowTime: 1.5
+  FireBallThrowTime: 10
   TakeDamageTime: 1
-  movementtime: 1
-  waitingtime: 0
+  movementtime: 5
+  waitingtime: 3
 --- !u!50 &944407382
 Rigidbody2D:
   serializedVersion: 4
@@ -6632,7 +6632,7 @@ GameObject:
   - component: {fileID: 1827770755}
   m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

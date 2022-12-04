@@ -56,10 +56,11 @@ public class RedBossController : MonoBehaviour
                 {
                     FireBallThrowCounter = FireBallThrowTime;
                     var NewFireBall=Instantiate(FireBall,FireBallCenter.position,FireBallCenter.rotation);
-                    NewFireBall.transform.localScale = RedBoss.localScale;
+                    NewFireBall.transform.localScale = -RedBoss.localScale;
+                    CurrentSituation = RedBossSituation.Move;
                 }
       
-                CurrentSituation= RedBossSituation.Move;
+                
                 break;
             case RedBossSituation.TakeDamage:
                 if (TakeDamageCounter > 0)
@@ -81,9 +82,7 @@ public class RedBossController : MonoBehaviour
                     {
                         RedBoss.localScale = new Vector3(-4.607166f, 4.607166f, 4.607166f);
                         isdirectionright = false;
-                        CurrentSituation= RedBossSituation.Hit;
-                        FireBallThrowCounter = FireBallThrowTime;
-                        anim.SetTrigger("movement_speed");
+                        StopMoveFNC();
                     }
                  
                 }
@@ -94,9 +93,8 @@ public class RedBossController : MonoBehaviour
                     {
                         RedBoss.localScale = new Vector3(4.607166f, 4.607166f, 4.607166f);
                         isdirectionright = true;
-                        CurrentSituation = RedBossSituation.Hit;
-                        FireBallThrowCounter = FireBallThrowTime;
-                        anim.SetTrigger("movement_speed");
+                        StopMoveFNC();
+                       
                     }
 
 
@@ -119,5 +117,11 @@ public class RedBossController : MonoBehaviour
 
         anim.SetTrigger("Hit");
         
+    }
+    void StopMoveFNC()
+    {
+        CurrentSituation = RedBossSituation.Hit;
+        FireBallThrowCounter = FireBallThrowTime;
+        anim.SetTrigger("Stop_Move");
     }
 }

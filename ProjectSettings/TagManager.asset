@@ -8,6 +8,7 @@ TagManager:
   - starscoretag
   - mushow
   - pepper
+  - Floor
   layers:
   - Default
   - TransparentFX

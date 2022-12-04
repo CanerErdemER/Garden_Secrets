@@ -21,10 +21,19 @@ public class fireballscripts : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+       
+        switch (collision.tag)
         {
-            heal_Controller.TakeDamage();
-            Destroy(gameObject);
+            case ("Player"):
+                heal_Controller.TakeDamage();
+                Destroy(gameObject);
+                break;
+            default:
+                Destroy(gameObject);
+                break;
+
         }
+            
+        
     }
 }
