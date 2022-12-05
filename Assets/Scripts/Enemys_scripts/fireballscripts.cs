@@ -28,7 +28,7 @@ public class fireballscripts : MonoBehaviour
                 heal_Controller.TakeDamage();
                 Destroy(gameObject);
                 break;
-            default:
+            case("Floor"):
                 Destroy(gameObject);
                 break;
 

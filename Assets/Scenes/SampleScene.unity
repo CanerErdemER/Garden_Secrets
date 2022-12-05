@@ -3399,7 +3399,7 @@ MonoBehaviour:
   sr: {fileID: 944407379}
   FireBall: {fileID: 4894170224540759531, guid: 8041070873a5cd84dbf94396e0713427, type: 3}
   FireBallCenter: {fileID: 1231235237}
-  FireBallThrowTime: 10
+  FireBallThrowTime: 1.5
   TakeDamageTime: 1
   movementtime: 5
   waitingtime: 3

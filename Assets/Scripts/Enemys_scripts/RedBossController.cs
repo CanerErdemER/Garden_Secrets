@@ -16,6 +16,7 @@ public class RedBossController : MonoBehaviour
     Rigidbody2D rb;
     public SpriteRenderer sr;
     [Header("Hit")]
+   
     public GameObject FireBall;
     public Transform FireBallCenter;
     public float FireBallThrowTime;
@@ -41,7 +42,7 @@ public class RedBossController : MonoBehaviour
         isdirectionright = true;
         Movementcounter = movementtime;
 
-        CurrentSituation = RedBossSituation.Hit;
+        CurrentSituation = RedBossSituation.Move;
     }
 
     void Update()
@@ -54,10 +55,11 @@ public class RedBossController : MonoBehaviour
                 FireBallThrowCounter -= Time.deltaTime;
                 if (FireBallThrowCounter <= 0)
                 {
-                    FireBallThrowCounter = FireBallThrowTime;
+                    anim.SetTrigger("hit");
+                    FireBallThrowCounter = FireBallThrowTime=Random.Range(0.7f,2.3f);
                     var NewFireBall=Instantiate(FireBall,FireBallCenter.position,FireBallCenter.rotation);
                     NewFireBall.transform.localScale = -RedBoss.localScale;
-                    CurrentSituation = RedBossSituation.Move;
+                    
                 }
       
                 
@@ -74,7 +76,7 @@ public class RedBossController : MonoBehaviour
                 }
                 break;
             case RedBossSituation.Move:
-               
+                anim.SetTrigger("movement_speed");
                 if (isdirectionright)
                 {
                     RedBoss.position += new Vector3(movement_speed * Time.deltaTime, 0f, 0f);
@@ -115,7 +117,7 @@ public class RedBossController : MonoBehaviour
         CurrentSituation = RedBossSituation.TakeDamage;
         TakeDamageCounter = TakeDamageTime;
 
-        anim.SetTrigger("Hit");
+        anim.SetTrigger("hit");
         
     }
     void StopMoveFNC()
