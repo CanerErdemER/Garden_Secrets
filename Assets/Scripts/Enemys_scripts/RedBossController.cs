@@ -122,8 +122,9 @@ public class RedBossController : MonoBehaviour
     }
     void StopMoveFNC()
     {
+        anim.SetTrigger("Stop_Move");
         CurrentSituation = RedBossSituation.Hit;
         FireBallThrowCounter = FireBallThrowTime;
-        anim.SetTrigger("Stop_Move");
+        
     }
 }
