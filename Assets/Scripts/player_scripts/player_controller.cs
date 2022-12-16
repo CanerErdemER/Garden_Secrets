@@ -106,7 +106,6 @@ public class player_controller : MonoBehaviour
             jokerScale.x = 4.147688f;
             directoryrihgt = true;
         }
-        
         else if(rb.velocity.x < 0)
         {
             jokerScale.x = -4.147688f;
@@ -114,27 +113,38 @@ public class player_controller : MonoBehaviour
         }
         transform.localScale = jokerScale;
     }
-    
     void deathFNC()
     {
-        
         if (healthcont.health <= 0)
         {
             healthcont.deathquestion = true;
             anim.SetBool("death", healthcont.deathquestion);
             rb.velocity = new Vector2(0, 0);
-            
+            gamemanager.GameOverFNC();
         }
-        
-
-
     }
-    public void enemytouchjump()
+    public void enemytouchjumpFNC()
     {
         rb.velocity = new Vector2(rb.velocity.x,enemytouchjumppower);    
 
     }
-
+    public void BossTouchJumpFNC()
+    {
+        
+        Vector2 jokerScale = transform.localScale;
+        if (rb.velocity.x > 0)
+        {
+            
+            directoryrihgt = true;
+            rb.velocity = new Vector2(10, enemytouchjumppower);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            rb.velocity = new Vector2(-10, enemytouchjumppower);
+            
+            directoryrihgt = false;
+        }
+    }
     public void recoilFNC()
     {
         recoilcounter = recoilTime;

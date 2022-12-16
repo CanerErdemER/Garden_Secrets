@@ -24,6 +24,7 @@ public class RedBossController : MonoBehaviour
     [Header("Damage")]
     public float TakeDamageTime;
     float TakeDamageCounter;
+    public int rbhealth = 5;
 
 
     Animator anim;
@@ -106,16 +107,22 @@ public class RedBossController : MonoBehaviour
             default:
                 break;
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            TakeDamageFNC();
-        }
+        
     }
  
     public void TakeDamageFNC()
     {
         CurrentSituation = RedBossSituation.TakeDamage;
         TakeDamageCounter = TakeDamageTime;
+        rbhealth--;
+        if (rbhealth == 0)
+        {
+            //ölüm animasyonu çalýþtýrýlacak
+            lefttarget.parent = this.transform;
+            righttarget.parent = this.transform;
+            Destroy(gameObject);
+        }
+
 
         anim.SetTrigger("hit");
         
